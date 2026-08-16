@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juragan Steak Kudus — Steak & Geprek Sizzling</title>
+<meta name="description" content="Juragan Steak Kudus: chicken steak, beef steak, ayam geprek, paket hemat, seblak, dan minuman. Pesan langsung via WhatsApp. Jl. Gebog - Dawe Gringging Samirejo, Kec. Gebog, Kabupaten Kudus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#15110e;
+    --night-2:#1f1913;
+    --paper:#fff8ec;
+    --white:#ffffff;
+    --orange:#ff7a1a;
+    --orange-dp:#c2440a;
+    --ember:#ffc069;
+    --ink:#221c16;
+    --ink-soft:#7a6f60;
+    --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+    --body:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body); color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; padding-bottom:0;}
+  body.has-cart{padding-bottom:78px;}
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .container{width:100%; max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{scroll-margin-top:76px;}
+  .eyebrow{font-family:var(--body); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--orange);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:999px; font-weight:700; font-size:.95rem; border:2px solid transparent; cursor:pointer; transition:transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease; white-space:nowrap;}
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--orange); color:var(--night);}
+  .btn-primary:hover{background:#ff8f3d;}
+  .btn-outline{background:transparent; color:var(--white); border-color:rgba(255,255,255,.35);}
+  .btn-outline:hover{border-color:var(--orange); color:var(--orange);}
+  .btn-block{width:100%;}
+  .flame{width:14px; height:14px; flex:none; color:var(--orange);}
+
+  /* Header */
+  .site-header{position:sticky; top:0; z-index:50; background:rgba(21,17,14,.92); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.08);}
+  .header-inner{display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--display); color:var(--white); font-size:1rem; letter-spacing:.02em; text-transform:uppercase;}
+  .nav-links{display:flex; align-items:center; gap:32px;}
+  .nav-links a{color:rgba(255,255,255,.82); font-weight:600; font-size:.92rem; transition:color .15s ease;}
+  .nav-links a:hover{color:var(--orange);}
+  .header-actions{display:flex; align-items:center; gap:12px;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
+  .nav-toggle span{width:22px; height:2px; background:var(--white); display:block;}
+
+  /* Hero */
+  .hero{position:relative; background:var(--night); color:var(--white); padding:70px 0 100px; overflow:hidden;}
+  .beam{position:absolute; top:-40px; width:160px; height:340px; background:linear-gradient(180deg, rgba(255,192,105,.28), transparent 75%); filter:blur(2px);}
+  .beam1{left:8%; transform:rotate(14deg);}
+  .beam2{left:34%; transform:rotate(6deg); width:130px; height:300px;}
+  .beam3{right:12%; transform:rotate(-12deg);}
+  .hero::before{content:""; position:absolute; inset:0; background: radial-gradient(650px 320px at 85% -10%, rgba(255,122,26,.22), transparent 70%); pointer-events:none;}
+  .hero-inner{position:relative; display:grid; gap:34px; max-width:760px;}
+  .hero h1{font-family:var(--display); font-weight:400; text-transform:uppercase; font-size:clamp(2.3rem, 6.2vw, 4.2rem); line-height:1.02; letter-spacing:.01em; margin-top:14px;}
+  .hero h1 span{color:var(--orange);}
+  .hero p.lead{font-size:1.05rem; line-height:1.65; color:rgba(255,255,255,.78); max-width:560px;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px;}
+  .hero-chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px;}
+  .hchip{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); padding:10px 16px; border-radius:999px; font-size:.85rem; color:rgba(255,255,255,.85);}
+  .hchip svg{width:16px; height:16px; flex:none; color:var(--orange);}
+
+  .torn{position:absolute; left:0; right:0; bottom:-1px; height:30px; background: linear-gradient(-45deg, var(--paper) 15px, transparent 0) 0 15px, linear-gradient(45deg, var(--paper) 15px, transparent 0) 0 15px; background-repeat:repeat-x; background-size:30px 30px;}
+  .torn::before{content:""; position:absolute; left:0; right:0; top:-4px; height:4px; background:var(--orange);}
+  .torn.inverse{background: linear-gradient(-45deg, var(--night) 15px, transparent 0) 0 15px, linear-gradient(45deg, var(--night) 15px, transparent 0) 0 15px; background-repeat:repeat-x; background-size:30px 30px;}
+  .torn.inverse::before{background:var(--orange);}
+
+  /* Quick facts */
+  .quickfacts{background:var(--paper); padding:56px 0 8px;}
+  .qf-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .qf-card{background:var(--white); border:1px solid rgba(34,28,22,.08); border-radius:16px; padding:24px; display:flex; gap:16px; align-items:flex-start;}
+  .qf-icon{width:42px; height:42px; border-radius:10px; background:var(--night); color:var(--orange); display:flex; align-items:center; justify-content:center; flex:none;}
+  .qf-icon svg{width:20px; height:20px;}
+  .qf-card h3{font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft); font-weight:700; margin-bottom:4px;}
+  .qf-card p{font-weight:700; font-size:1rem; line-height:1.4;}
+  .qf-card a{color:var(--orange-dp);}
+
+  /* Section heading */
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .section-head h2{font-family:var(--display); text-transform:uppercase; font-weight:400; font-size:clamp(1.9rem, 4vw, 2.6rem); margin-top:10px; letter-spacing:.01em;}
+  .section-head p{color:var(--ink-soft); margin-top:12px; font-size:1rem; line-height:1.6;}
+
+  /* Cara Pesan */
+  .carapesan{background:var(--paper); padding:24px 0 72px;}
+  .steps{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:8px;}
+  .step-card{background:var(--white); border:1px solid rgba(34,28,22,.08); border-radius:16px; padding:20px; display:flex; gap:14px;}
+  .step-num{flex:none; width:34px; height:34px; border-radius:50%; background:var(--night); color:var(--orange); font-family:var(--display); display:flex; align-items:center; justify-content:center; font-size:1rem;}
+  .step-text h4{font-size:.95rem; font-weight:700; margin-bottom:4px;}
+  .step-text p{font-size:.85rem; color:var(--ink-soft); line-height:1.5;}
+
+  /* Menu */
+  .menu{background:var(--paper); padding:8px 0 96px;}
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;}
+  .chip{padding:10px 18px; border-radius:999px; background:var(--white); border:1.5px solid rgba(34,28,22,.12); font-weight:700; font-size:.86rem; color:var(--ink); cursor:pointer; transition:all .15s ease;}
+  .chip:hover{border-color:var(--orange);}
+  .chip.active{background:var(--night); color:var(--white); border-color:var(--night);}
+  .chip.active::before{content:"● "; color:var(--orange);}
+
+  .menu-panel{display:none;}
+  .menu-panel.active{display:block; animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  .panel-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:18px; flex-wrap:wrap;}
+  .panel-head h3{font-family:var(--display); font-weight:400; text-transform:uppercase; font-size:1.4rem;}
+  .panel-count{font-size:.82rem; color:var(--ink-soft); font-weight:600;}
+  .group-label{font-size:.78rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--orange-dp); margin:22px 0 10px;}
+  .group-label:first-child{margin-top:0;}
+
+  .item-list{border:1px solid rgba(34,28,22,.1); border-radius:16px; overflow:hidden; background:rgba(34,28,22,.1);}
+  .item-row{background:var(--white); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; transition:background .15s ease;}
+  .item-row.active-qty{background:#FFEEDD;}
+  .item-row.active-qty .price{background:var(--orange); color:var(--night);}
+  .item-row + .item-row{border-top:1px solid rgba(34,28,22,.08); margin-top:1px;}
+  .item-text{min-width:0;}
+  .item-text strong{font-weight:700; font-size:.96rem; display:block;}
+  .item-text span{color:var(--ink-soft); font-size:.8rem; line-height:1.4; display:block; margin-top:2px;}
+  .item-right{display:flex; align-items:center; gap:12px; flex:none;}
+  .price{background:var(--night); color:var(--orange); font-weight:800; font-size:.82rem; padding:6px 10px; border-radius:8px; white-space:nowrap;}
+  .qty-control{display:inline-flex; align-items:center; gap:8px; background:var(--paper); border:1px solid rgba(34,28,22,.15); border-radius:999px; padding:3px;}
+  .qty-btn{width:26px; height:26px; border-radius:50%; border:none; font-weight:800; font-size:1rem; display:flex; align-items:center; justify-content:center; cursor:pointer; line-height:1; background:var(--night); color:var(--white);}
+  .qty-btn:hover{background:var(--orange-dp);}
+  .qty-btn.plus{background:var(--orange); color:var(--night);}
+  .qty-btn.plus:hover{background:#ff8f3d;}
+  .qty-value{min-width:16px; text-align:center; font-weight:800; font-size:.88rem;}
+
+  .menu-note{margin-top:22px; padding:16px 20px; border-radius:14px; background:var(--night); color:rgba(255,255,255,.85); font-size:.88rem; display:flex; gap:12px; align-items:flex-start;}
+  .menu-note svg{width:18px; height:18px; color:var(--orange); flex:none; margin-top:2px;}
+  .menu-note strong{color:var(--white);}
+  .price-note{margin-top:28px; padding:18px 20px; border-radius:14px; background:var(--white); border:1px dashed rgba(34,28,22,.25); font-size:.88rem; color:var(--ink-soft); display:flex; gap:12px; align-items:flex-start;}
+  .price-note svg{width:18px; height:18px; color:var(--orange-dp); flex:none; margin-top:2px;}
+  .price-note a{color:var(--orange-dp); font-weight:700;}
+
+  /* Cart bar */
+  .cart-bar{position:fixed; left:0; right:0; bottom:0; z-index:70; background:var(--night); color:var(--white); padding:14px 20px; display:none; align-items:center; justify-content:space-between; gap:16px; box-shadow:0 -8px 24px rgba(0,0,0,.3);}
+  .cart-bar.show{display:flex;}
+  .cart-info{display:flex; flex-direction:column; gap:2px;}
+  .cart-info strong{font-size:.95rem;}
+  .cart-info span{font-size:.78rem; color:rgba(255,255,255,.6);}
+
+  /* Modal */
+  .modal-overlay{position:fixed; inset:0; background:rgba(21,17,14,.6); z-index:90; display:none; align-items:flex-end; justify-content:center; padding:0;}
+  .modal-overlay.show{display:flex;}
+  .modal-sheet{background:var(--paper); width:100%; max-width:560px; max-height:90vh; overflow-y:auto; border-radius:20px 20px 0 0; padding:26px 22px 22px; position:relative;}
+  @media (min-width:640px){ .modal-overlay{align-items:center;} .modal-sheet{border-radius:20px; max-height:82vh; margin:20px;} }
+  .modal-close{position:absolute; top:16px; right:16px; width:34px; height:34px; border-radius:50%; background:var(--white); border:1px solid rgba(34,28,22,.15); display:flex; align-items:center; justify-content:center; cursor:pointer;}
+  .modal-close svg{width:16px; height:16px;}
+  .modal-title{font-family:var(--display); text-transform:uppercase; font-size:1.3rem; margin-bottom:4px; padding-right:40px;}
+  .modal-sub{font-size:.85rem; color:var(--ink-soft); margin-bottom:16px;}
+  .cart-list{border-top:1px solid rgba(34,28,22,.12);}
+  .cart-item-row{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px solid rgba(34,28,22,.1);}
+  .cart-item-row .ci-name{font-weight:700; font-size:.9rem;}
+  .cart-item-row .ci-sub{font-size:.78rem; color:var(--ink-soft); margin-top:2px;}
+  .empty-cart-msg{text-align:center; color:var(--ink-soft); padding:26px 10px; font-size:.88rem;}
+  .cart-total-row{display:flex; justify-content:space-between; align-items:center; padding:14px 0 4px; font-weight:800; font-size:1.05rem;}
+  .field-label{font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin:18px 0 8px;}
+  .payment-options{display:flex; flex-direction:column; gap:9px;}
+  .payment-option{display:flex; align-items:center; gap:10px; background:var(--white); border:1.5px solid rgba(34,28,22,.12); border-radius:12px; padding:11px 14px; cursor:pointer; font-weight:600; font-size:.88rem; transition:border-color .15s ease, background .15s ease;}
+  .payment-option input{accent-color:var(--orange); width:16px; height:16px; flex:none;}
+  .payment-option.checked{border-color:var(--orange); background:#FFF3E6;}
+  textarea#orderNotes{width:100%; border-radius:12px; border:1.5px solid rgba(34,28,22,.15); padding:12px 14px; font-family:var(--body); font-size:.88rem; resize:vertical; min-height:64px; background:var(--white);}
+  textarea#orderNotes:focus{outline:none; border-color:var(--orange);}
+  .modal-actions{display:flex; flex-direction:column; gap:10px; margin-top:20px;}
+  .clear-cart-link{text-align:center; font-size:.8rem; color:var(--ink-soft); font-weight:700; cursor:pointer; padding:4px;}
+  .clear-cart-link:hover{color:var(--orange-dp);}
+
+  /* Lokasi */
+  .lokasi{position:relative; background:var(--night); color:var(--white); padding:96px 0 88px;}
+  .lokasi-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:44px; align-items:stretch;}
+  .lokasi-card{background:var(--night-2); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:32px; display:flex; flex-direction:column; gap:22px;}
+  .loc-row{display:flex; gap:14px; align-items:flex-start;}
+  .loc-row .qf-icon{background:var(--orange); color:var(--night);}
+  .loc-row h4{font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.55); font-weight:700; margin-bottom:6px;}
+  .loc-row p{font-weight:600; line-height:1.55; font-size:1rem;}
+  .loc-row a{color:var(--orange);}
+  .map-wrap{border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.08); min-height:320px;}
+  .map-wrap iframe{width:100%; height:100%; min-height:320px; border:0; filter:grayscale(.15) contrast(1.05);}
+
+  /* Footer */
+  footer{background:var(--night); color:rgba(255,255,255,.7); border-top:1px solid rgba(255,255,255,.08); padding:48px 0 28px;}
+  .footer-inner{display:flex; flex-wrap:wrap; justify-content:space-between; gap:28px; align-items:flex-start;}
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{font-size:.88rem; color:rgba(255,255,255,.5); max-width:320px; line-height:1.6;}
+  .footer-contact{display:flex; flex-direction:column; gap:8px; font-size:.92rem;}
+  .footer-contact a{font-weight:700; color:var(--white);}
+  .footer-contact a:hover{color:var(--orange);}
+  .footer-bottom{margin-top:36px; padding-top:20px; border-top:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem; color:rgba(255,255,255,.4);}
+
+  @media (max-width:860px){
+    .qf-grid{grid-template-columns:1fr;}
+    .lokasi-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links{position:absolute; top:72px; left:0; right:0; background:var(--night); flex-direction:column; align-items:flex-start; gap:0; padding:8px 24px 18px; border-bottom:1px solid rgba(255,255,255,.08); display:none;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:12px 0; width:100%; border-bottom:1px solid rgba(255,255,255,.06);}
+    .nav-toggle{display:flex;}
+    .header-actions .btn-primary span.label{display:none;}
+    .header-actions .btn-primary{padding:12px;}
+    .hero{padding:44px 0 84px;}
+    .menu, .lokasi{padding-top:64px; padding-bottom:64px;}
+    .carapesan{padding-bottom:56px;}
+    .cart-bar{padding:12px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <svg class="flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.7 2.7-.7 4-1.8 5.3C9.4 8.7 8.5 10 8.5 12a3.5 3.5 0 0 0 3.5 3.5c1 0 1.6-.4 2-1-.3 1.7-1.7 3-3.5 3A5 5 0 0 1 5.5 12.5c0-3 2-4.7 3.3-6.3C9.7 5 10.3 3.7 9.5 2c1.6.4 3 1.5 3.8 3 .8-.6 1.2-1.6.9-3 2.6 1.3 4.3 4 4.3 7 0 4.4-3.6 8-8 8S2.5 13.4 2.5 9c0-.6.1-1.2.2-1.8.9 1 2.3 1.8 3.8 1.8-.5-2.5.6-5 3-6 .3 1.4-.2 2.4-1 3.4.9-.4 2-1.4 2-2.9.9.5 1.6 1.4 2 2.5z"/></svg>
+      Juragan Steak Kudus
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">Beranda</a>
+      <a href="#menu">Menu</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+6285646780051" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="label">Telepon</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="beam beam1"></div>
+    <div class="beam beam2"></div>
+    <div class="beam beam3"></div>
+    <div class="container hero-inner">
+      <p class="eyebrow">Steak &amp; Geprek Sizzling Kudus</p>
+      <h1>Steak panas di piring, <span>rasa juragan</span> di lidah</h1>
+      <p class="lead">Chicken steak, beef steak, dan ayam geprek sizzling dengan pilihan saus BBQ, blackpepper, sampai ekstra pedas — plus paket hemat mulai 12K, seblak, dan minuman segar. Pesan langsung, kirim ke WhatsApp kami dalam sekali tap.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary">Pesan Sekarang</a>
+        <a href="tel:+6285646780051" class="btn btn-outline">Telepon</a>
+      </div>
+      <div class="hero-chips">
+        <div class="hchip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Dawe, Gringging, Samirejo, Kec. Gebog
+        </div>
+        <div class="hchip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          085646780051
+        </div>
+      </div>
+    </div>
+    <div class="torn"></div>
+  </section>
+
+  <!-- QUICK FACTS -->
+  <section class="quickfacts">
+    <div class="container qf-grid">
+      <div class="qf-card">
+        <div class="qf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h3>Alamat</h3><p>Jl. Gebog - Dawe Gringging Samirejo, Dawe, Gringging, Samirejo, Kec. Gebog, Kabupaten Kudus, Jawa Tengah 59353</p></div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><h3>Telepon / WhatsApp</h3><p><a href="tel:+6285646780051">085646780051</a></p></div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+        <div><h3>Menu</h3><p>9 kategori — steak, geprek, seblak, camilan &amp; minuman, mulai 3K</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA PESAN -->
+  <section class="carapesan">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:24px;">
+        <p class="eyebrow">Cara Pesan</p>
+        <h2>Pesan dalam 4 Langkah</h2>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-text"><h4>Pilih menu &amp; jumlah</h4><p>Tap tombol "+" pada menu yang kamu mau, atur jumlahnya dengan tombol +/−.</p></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-text"><h4>Buka keranjang</h4><p>Bar keranjang muncul di bawah layar — total harga dihitung otomatis.</p></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-text"><h4>Pilih pembayaran &amp; catatan</h4><p>Pilih tunai, transfer bank, atau QRIS, dan tulis catatan seperti tingkat kepedasan.</p></div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-text"><h4>Kirim ke WhatsApp</h4><p>Pesanan otomatis tersusun rapi di chat WhatsApp — tinggal kirim, admin akan konfirmasi.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Daftar Menu</p>
+        <h2>Menu Juragan Steak</h2>
+        <p>Sizzling steak, geprek bakar, paket hemat, sampai seblak dan minuman — lengkap dengan harga. Tap "+" untuk menambah ke keranjang.</p>
+      </div>
+
+      <div class="chips" id="chipRow"></div>
+      <div id="menuPanels"></div>
+
+      <div class="price-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Harga dapat berubah sewaktu-waktu. Hubungi kami di <a href="tel:+6285646780051">085646780051</a> jika ada pertanyaan seputar menu.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASI -->
+  <section class="lokasi" id="lokasi">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Kunjungi Kami</p>
+        <h2>Lokasi Juragan Steak Kudus</h2>
+        <p style="color:rgba(255,255,255,.65)">Berada di kawasan Gebog, mudah dijangkau untuk makan di tempat atau pesan bawa pulang.</p>
+      </div>
+      <div class="lokasi-grid">
+        <div class="lokasi-card">
+          <div class="loc-row">
+            <div class="qf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h4>Alamat Lengkap</h4><p>Jl. Gebog - Dawe Gringging Samirejo, Dawe, Gringging, Samirejo, Kec. Gebog, Kabupaten Kudus, Jawa Tengah 59353</p></div>
+          </div>
+          <div class="loc-row">
+            <div class="qf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><h4>Telepon / WhatsApp</h4><p><a href="tel:+6285646780051">085646780051</a></p></div>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Jl.+Gebog+-+Dawe+Gringging+Samirejo,+Dawe,+Gringging,+Samirejo,+Kec.+Gebog,+Kabupaten+Kudus,+Jawa+Tengah+59353" target="_blank" rel="noopener">Buka di Google Maps</a>
+            <a class="btn btn-outline" href="tel:+6285646780051">Telepon Sekarang</a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Jl.+Gebog+-+Dawe+Gringging+Samirejo,+Dawe,+Gringging,+Samirejo,+Kec.+Gebog,+Kabupaten+Kudus,+Jawa+Tengah+59353&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi Juragan Steak Kudus"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="torn inverse" style="top:-1px; bottom:auto;"></div>
+  </section>
+</main>
+
+<footer id="kontak">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="logo">
+        <svg class="flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12.5 2c.7 2.7-.7 4-1.8 5.3C9.4 8.7 8.5 10 8.5 12a3.5 3.5 0 0 0 3.5 3.5c1 0 1.6-.4 2-1-.3 1.7-1.7 3-3.5 3A5 5 0 0 1 5.5 12.5c0-3 2-4.7 3.3-6.3C9.7 5 10.3 3.7 9.5 2c1.6.4 3 1.5 3.8 3 .8-.6 1.2-1.6.9-3 2.6 1.3 4.3 4 4.3 7 0 4.4-3.6 8-8 8S2.5 13.4 2.5 9c0-.6.1-1.2.2-1.8.9 1 2.3 1.8 3.8 1.8-.5-2.5.6-5 3-6 .3 1.4-.2 2.4-1 3.4.9-.4 2-1.4 2-2.9.9.5 1.6 1.4 2 2.5z"/></svg>
+        Juragan Steak Kudus
+      </a>
+      <p>Chicken steak, beef steak, dan ayam geprek sizzling dengan paket hemat khas Juragan.</p>
+    </div>
+    <div class="footer-contact">
+      <span style="color:rgba(255,255,255,.5); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em;">Kontak</span>
+      <a href="tel:+6285646780051">085646780051</a>
+      <span style="max-width:280px; color:rgba(255,255,255,.6); font-weight:500;">Jl. Gebog - Dawe Gringging Samirejo, Dawe, Gringging, Samirejo, Kec. Gebog, Kabupaten Kudus, Jawa Tengah 59353</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Juragan Steak Kudus</span>
+    <span>Dibuat dengan 🔥 untuk pecinta steak sizzling</span>
+  </div>
+</footer>
+
+<!-- CART BAR -->
+<div class="cart-bar" id="cartBar">
+  <div class="cart-info">
+    <strong id="cartBarCount">0 item</strong>
+    <span id="cartBarTotal">Rp0</span>
+  </div>
+  <button class="btn btn-primary" id="openCartBtn">Lihat Pesanan</button>
+</div>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal-sheet">
+    <button class="modal-close" id="closeCartBtn" aria-label="Tutup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h3 class="modal-title">Pesanan Kamu</h3>
+    <p class="modal-sub">Cek lagi pesananmu sebelum dikirim ke WhatsApp kami.</p>
+
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-total-row"><span>Total</span><span id="cartTotalPrice">Rp0</span></div>
+
+    <p class="field-label">Metode Pembayaran</p>
+    <div class="payment-options" id="paymentOptions">
+      <label class="payment-option checked"><input type="radio" name="payment" value="Tunai saat ambil di tempat" checked>Tunai saat ambil di tempat</label>
+      <label class="payment-option"><input type="radio" name="payment" value="Transfer Bank BRI">Transfer Bank BRI</label>
+      <label class="payment-option"><input type="radio" name="payment" value="Transfer Bank BCA">Transfer Bank BCA</label>
+      <label class="payment-option"><input type="radio" name="payment" value="Transfer Bank Mandiri">Transfer Bank Mandiri</label>
+      <label class="payment-option"><input type="radio" name="payment" value="QRIS">QRIS</label>
+    </div>
+
+    <p class="field-label">Catatan Tambahan (opsional)</p>
+    <textarea id="orderNotes" placeholder="Misal: pedas level 2, tanpa bawang, dll."></textarea>
+
+    <div class="modal-actions">
+      <button class="btn btn-primary btn-block" id="sendOrderBtn">Kirim Pesanan via WhatsApp</button>
+      <span class="clear-cart-link" id="clearCartBtn">Kosongkan Keranjang</span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== Data menu — sinkron dengan harga di poster resmi ===== */
+const MENU = {
+  geprek: {
+    label: "Geprek Juragan",
+    note: "Pilihan sambal: Sambal Korek atau Sambal Ijo.",
+    items: [
+      {name:"Paket Ayam Geprek Bakar", desc:"Nasi, ayam geprek bakar, es teh", price:18000},
+      {name:"Nasi Ayam Geprek Bakar", desc:"Nasi, ayam geprek bakar", price:16000},
+      {name:"Geprek Bakar Tanpa Nasi", desc:"Ayam geprek bakar", price:13000},
+      {name:"Geprek Dada / Paha Bawah", desc:"Nasi, geprek dada/paha bawah, pilihan sambal", price:15000},
+      {name:"Geprek Paha Atas", desc:"Nasi, geprek paha atas, pilihan sambal", price:19000},
+      {name:"Mie Geprek", price:17000}
+    ]
+  },
+  paket: {
+    label: "Paket Hemat",
+    groups: [
+      {label:"Paket Hemat Banget", items:[
+        {name:"Juragan 1", desc:"Nasi, sayap, saus, es teh", price:12000},
+        {name:"Juragan 2", desc:"Nasi, dada/paha bawah, saus, es teh", price:15000},
+        {name:"Juragan 3", desc:"Nasi, paha atas, saus, es teh", price:18000}
+      ]},
+      {label:"Paket Hemat Juragan", items:[
+        {name:"Hemat Telur", desc:"Nasi, telur dadar, sambal, es teh", price:12000},
+        {name:"Hemat Dada / Paha Bawah", desc:"Nasi, dada/paha bawah, sambal, es teh", price:17000},
+        {name:"Hemat Paha Atas", desc:"Nasi, paha atas, sambal, es teh", price:20000},
+        {name:"Big Chicken", desc:"Nasi, paha atas, saus, es teh", price:20000},
+        {name:"Chicken Breast", desc:"Nasi, dada, saus, es teh", price:17000},
+        {name:"Spicy Chicken", desc:"Nasi, spicy chicken (level 1-3), saus keju, es teh", price:19000}
+      ]}
+    ]
+  },
+  steak: {
+    label: "Chicken & Beef Steak",
+    note: "Pilihan saus: Original, BBQ, Blackpepper, Ekstra Pedas. Tambah topping keju cheddar/mozzarella +6K.",
+    items: [
+      {name:"Chicken Ori", price:21000},
+      {name:"Beef Crispy", price:19000},
+      {name:"Steak Crispy", price:15000},
+      {name:"Big Steak Crispy", price:19000},
+      {name:"Combo Steak Crispy", price:21000},
+      {name:"Double Steak Crispy", price:24000},
+      {name:"Beef Chicken Steak", price:30000}
+    ]
+  },
+  spesial: {
+    label: "Menu Spesial Grill",
+    items: [
+      {name:"Chicken Grill Saus BBQ", desc:"Chicken grill, saus BBQ, kentang goreng dan salad", price:26000},
+      {name:"Chicken Grill Saus Mushroom", desc:"Chicken grill, saus mushroom, kentang goreng dan salad", price:26000},
+      {name:"Chicken Grill Saus Blackpepper", desc:"Chicken grill, saus blackpepper, kentang goreng dan salad", price:26000},
+      {name:"Beef Steak Saus BBQ", desc:"Beef steak, saus BBQ, kentang goreng dan salad", price:32000},
+      {name:"Beef Steak Saus Blackpepper", desc:"Beef steak, saus blackpepper, kentang goreng dan salad", price:32000}
+    ]
+  },
+  nasimie: {
+    label: "Nasi Goreng, Mie & Rice Bowl",
+    groups: [
+      {label:"Nasi Goreng & Mie", items:[
+        {name:"Nasi Goreng Original", price:12000},
+        {name:"Nasi Goreng Ayam", price:14000},
+        {name:"Nasi Goreng Dadar", price:15000},
+        {name:"Nasi Goreng Spesial", price:18000},
+        {name:"Mie Goreng", price:13000},
+        {name:"Mie Nyemek", price:13000},
+        {name:"Kwetiau", desc:"Menu baru", price:13000}
+      ]},
+      {label:"Rice Bowl", items:[
+        {name:"Chicken Blackpepper", price:15000},
+        {name:"Chicken Barbeque", price:15000},
+        {name:"Chicken Teriyaki", price:15000}
+      ]}
+    ]
+  },
+  seblak: {
+    label: "Seblak Juragan",
+    items: [
+      {name:"Seblak Telur", price:9000},
+      {name:"Seblak Sosis", price:11000},
+      {name:"Seblak Ceker", price:13000},
+      {name:"Seblak Spesial", price:15000}
+    ]
+  },
+  snack: {
+    label: "Snack & Ekstra",
+    groups: [
+      {label:"Snack", items:[
+        {name:"Sosis", price:7000},
+        {name:"Jamur Crispy", price:8000},
+        {name:"Nugget", price:8000},
+        {name:"Kulit Crispy", price:9000},
+        {name:"Kentang Goreng", price:12000},
+        {name:"Mix Snack", price:15000}
+      ]},
+      {label:"Ekstra Menu", items:[
+        {name:"Nasi Putih", price:4000},
+        {name:"Saus", price:4000},
+        {name:"Sambal", price:4000},
+        {name:"Telur Ceplok", price:5000},
+        {name:"Telur Dadar", price:5000},
+        {name:"Indomie", price:6000},
+        {name:"Keju Cheddar", price:6000},
+        {name:"Keju Moza", price:6000}
+      ]}
+    ]
+  },
+  drink: {
+    label: "Drink",
+    items: [
+      {name:"Teh Manis", price:3000},
+      {name:"Teh Jumbo", price:5000},
+      {name:"Jeruk Manis", price:5000},
+      {name:"Jeruk Jumbo", price:8000},
+      {name:"Jeruk Nipis", price:5000},
+      {name:"White Coffee", price:5000},
+      {name:"Black Coffee", price:5000},
+      {name:"Lecy Tea", price:5000},
+      {name:"Lemon Tea", price:10000},
+      {name:"Air Mineral", price:4000},
+      {name:"Lecy", price:4000},
+      {name:"Melon", price:4000},
+      {name:"Frambos", price:4000},
+      {name:"Jambu", price:4000}
+    ]
+  },
+  shake: {
+    label: "Milkshake & Mocktail",
+    groups: [
+      {label:"Milkshake — semua 10K", items:[
+        {name:"Strawberry", price:10000},
+        {name:"Melon", price:10000},
+        {name:"Coklat", price:10000},
+        {name:"Cappuccino", price:10000},
+        {name:"Moccacino", price:10000},
+        {name:"Anggur", price:10000},
+        {name:"Mangga", price:10000},
+        {name:"Red Velvet", price:10000},
+        {name:"Tiramizu", price:10000},
+        {name:"Taro", price:10000},
+        {name:"Green Tea", price:10000}
+      ]},
+      {label:"Mocktail — semua 10K", items:[
+        {name:"Blue Ocean", price:10000},
+        {name:"Red Fantasy", price:10000},
+        {name:"Lemon Squash", price:10000},
+        {name:"Frizzy Melon", price:10000},
+        {name:"Lecy Squash", price:10000}
+      ]}
+    ]
+  }
+};
+
+const WA_NUMBER = "6285646780051";
+const itemsById = {};
+const cart = {}; // id -> qty
+
+function formatK(price){ return Math.round(price/1000) + "K"; }
+function formatRupiah(n){ return "Rp" + n.toLocaleString("id-ID"); }
+function countItems(cat){
+  if (cat.groups) return cat.groups.reduce((sum,g)=> sum + g.items.length, 0);
+  return cat.items.length;
+}
+
+function buildItemRow(catKey, groupIdx, itemIdx, item){
+  const id = catKey + "__" + groupIdx + "__" + itemIdx;
+  itemsById[id] = { name: item.name, price: item.price };
+  return (
+    '<div class="item-row" data-id="' + id + '">' +
+      '<div class="item-text"><strong>' + item.name + '</strong>' +
+      (item.desc ? '<span>' + item.desc + '</span>' : '') +
+      '</div>' +
+      '<div class="item-right">' +
+        '<span class="price">' + formatK(item.price) + '</span>' +
+        '<div class="qty-control">' +
+          '<button type="button" class="qty-btn minus" data-action="minus" data-id="' + id + '">−</button>' +
+          '<span class="qty-value" data-qty="' + id + '">0</span>' +
+          '<button type="button" class="qty-btn plus" data-action="plus" data-id="' + id + '">+</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function renderPanelBody(catKey, cat){
+  let html = '<div class="panel-head"><h3>' + cat.label + '</h3><span class="panel-count">' + countItems(cat) + ' menu</span></div>';
+  if (cat.groups){
+    cat.groups.forEach((g, gi) => {
+      html += '<p class="group-label">' + g.label + '</p><div class="item-list">';
+      g.items.forEach((item, ii) => html += buildItemRow(catKey, gi, ii, item));
+      html += '</div>';
+    });
+  } else {
+    html += '<div class="item-list">';
+    cat.items.forEach((item, ii) => html += buildItemRow(catKey, 0, ii, item));
+    html += '</div>';
+  }
+  if (cat.note){
+    html += '<div class="menu-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>' + cat.note + '</span></div>';
+  }
+  return html;
+}
+
+function renderMenu(){
+  const chipRow = document.getElementById('chipRow');
+  const panelsWrap = document.getElementById('menuPanels');
+  let chipsHtml = '';
+  let panelsHtml = '';
+  let first = true;
+  Object.keys(MENU).forEach(key => {
+    const cat = MENU[key];
+    chipsHtml += '<button class="chip' + (first ? ' active' : '') + '" data-target="' + key + '">' + cat.label + '</button>';
+    panelsHtml += '<div class="menu-panel' + (first ? ' active' : '') + '" data-panel="' + key + '">' + renderPanelBody(key, cat) + '</div>';
+    first = false;
+  });
+  chipRow.innerHTML = chipsHtml;
+  panelsWrap.innerHTML = panelsHtml;
+}
+renderMenu();
+
+/* ===== Filter kategori ===== */
+document.getElementById('chipRow').addEventListener('click', (e) => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  const target = chip.dataset.target;
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+});
+
+/* ===== Mobile nav ===== */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ===== Keranjang ===== */
+const cartBar = document.getElementById('cartBar');
+const cartBarCount = document.getElementById('cartBarCount');
+const cartBarTotal = document.getElementById('cartBarTotal');
+const cartModal = document.getElementById('cartModal');
+const cartList = document.getElementById('cartList');
+const cartTotalPrice = document.getElementById('cartTotalPrice');
+
+function cartTotals(){
+  let count = 0, total = 0;
+  Object.keys(cart).forEach(id => {
+    const qty = cart[id];
+    const item = itemsById[id];
+    if (!item) return;
+    count += qty;
+    total += qty * item.price;
+  });
+  return { count, total };
+}
+
+function updateCartBar(){
+  const { count, total } = cartTotals();
+  if (count > 0){
+    cartBar.classList.add('show');
+    document.body.classList.add('has-cart');
+    cartBarCount.textContent = count + (count === 1 ? ' item' : ' item');
+    cartBarTotal.textContent = formatRupiah(total);
+  } else {
+    cartBar.classList.remove('show');
+    document.body.classList.remove('has-cart');
+  }
+}
+
+function setQty(id, qty){
+  qty = Math.max(0, qty);
+  if (qty === 0) delete cart[id]; else cart[id] = qty;
+  const qtyEl = document.querySelector('[data-qty="' + id + '"]');
+  if (qtyEl) qtyEl.textContent = qty;
+  const row = document.querySelector('.item-row[data-id="' + id + '"]');
+  if (row) row.classList.toggle('active-qty', qty > 0);
+  updateCartBar();
+}
+
+document.getElementById('menuPanels').addEventListener('click', (e) => {
+  const btn = e.target.closest('.qty-btn');
+  if (!btn) return;
+  const id = btn.dataset.id;
+  const current = cart[id] || 0;
+  setQty(id, btn.dataset.action === 'plus' ? current + 1 : current - 1);
+});
+
+function renderCartModal(){
+  const ids = Object.keys(cart);
+  if (ids.length === 0){
+    cartList.innerHTML = '<p class="empty-cart-msg">Keranjang masih kosong. Pilih menu dulu, yuk!</p>';
+  } else {
+    let html = '';
+    ids.forEach(id => {
+      const item = itemsById[id];
+      const qty = cart[id];
+      const subtotal = item.price * qty;
+      html +=
+        '<div class="cart-item-row">' +
+          '<div><div class="ci-name">' + item.name + '</div><div class="ci-sub">' + formatK(item.price) + ' x ' + qty + ' = ' + formatRupiah(subtotal) + '</div></div>' +
+          '<div class="qty-control">' +
+            '<button type="button" class="qty-btn minus" data-action="minus" data-id="' + id + '">−</button>' +
+            '<span class="qty-value">' + qty + '</span>' +
+            '<button type="button" class="qty-btn plus" data-action="plus" data-id="' + id + '">+</button>' +
+          '</div>' +
+        '</div>';
+    });
+    cartList.innerHTML = html;
+  }
+  cartTotalPrice.textContent = formatRupiah(cartTotals().total);
+}
+
+cartList.addEventListener('click', (e) => {
+  const btn = e.target.closest('.qty-btn');
+  if (!btn) return;
+  const id = btn.dataset.id;
+  const current = cart[id] || 0;
+  setQty(id, btn.dataset.action === 'plus' ? current + 1 : current - 1);
+  renderCartModal();
+});
+
+document.getElementById('openCartBtn').addEventListener('click', () => {
+  renderCartModal();
+  cartModal.classList.add('show');
+});
+document.getElementById('closeCartBtn').addEventListener('click', () => cartModal.classList.remove('show'));
+cartModal.addEventListener('click', (e) => { if (e.target === cartModal) cartModal.classList.remove('show'); });
+
+document.getElementById('clearCartBtn').addEventListener('click', () => {
+  Object.keys(cart).forEach(id => setQty(id, 0));
+  renderCartModal();
+});
+
+/* ===== Metode pembayaran ===== */
+document.getElementById('paymentOptions').addEventListener('change', (e) => {
+  document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('checked'));
+  e.target.closest('.payment-option').classList.add('checked');
+});
+
+/* ===== Kirim pesanan ke WhatsApp ===== */
+document.getElementById('sendOrderBtn').addEventListener('click', () => {
+  const ids = Object.keys(cart);
+  if (ids.length === 0){
+    alert('Keranjang masih kosong, silakan pilih menu dulu ya.');
+    return;
+  }
+  const lines = [];
+  let total = 0;
+  ids.forEach((id, i) => {
+    const item = itemsById[id];
+    const qty = cart[id];
+    const subtotal = item.price * qty;
+    total += subtotal;
+    lines.push((i + 1) + '. ' + item.name + ' x' + qty + ' - ' + formatRupiah(subtotal));
+  });
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  const notes = document.getElementById('orderNotes').value.trim();
+
+  let msg = 'Halo Juragan Steak Kudus, saya mau pesan:\n\n' + lines.join('\n') +
+            '\n\nTotal: ' + formatRupiah(total) +
+            '\n\nMetode pembayaran: ' + payment;
+  if (notes) msg += '\nCatatan: ' + notes;
+  msg += '\n\nMohon konfirmasi pesanan saya ya. Terima kasih!';
+
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
